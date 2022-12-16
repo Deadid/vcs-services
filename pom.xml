@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>vcsservices-app</module>
 		<module>vcsservices-dto</module>
 		<module>vcsservices-clients</module>
+		<module>vcsservices-app</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
