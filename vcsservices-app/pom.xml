@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>org.serhii.makhov.vcsservices</groupId>
-            <artifactId>githubservice-clients</artifactId>
+            <artifactId>vcsservices-clients</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <!-- Spring dependencies -->
