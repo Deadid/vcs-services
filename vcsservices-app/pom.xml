@@ -21,12 +21,12 @@
         <dependency>
             <groupId>org.serhii.makhov.vcsservices</groupId>
             <artifactId>vcsservices-dto</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.serhii.makhov.vcsservices</groupId>
             <artifactId>githubservice-clients</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <!-- Spring dependencies -->
         <dependency>
