@@ -1,0 +1,69 @@
+openapi: 3.0.1
+info:
+  title: Version Control System Services
+  version: 0.0.1-SNAPSHOT
+paths:
+  /github/repos/{userLogin}:
+    get:
+      description: Fetch Github repos which are not forks for specific user by login
+      operationId: findNotForksByLogin
+      parameters:
+        - name: userLogin
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RepositoryResource'
+        "404":
+          description: Specified user not found
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/ProblemDetail'
+        "406":
+          description: Media type no acceptable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+components:
+  schemas:
+    BranchResource:
+      type: object
+      properties:
+        name:
+          type: string
+        lastCommitSha:
+          type: string
+    RepositoryResource:
+      type: object
+      properties:
+        repositoryName:
+          type: string
+        ownerLogin:
+          type: string
+        branches:
+          type: array
+          items:
+            $ref: '#/components/schemas/BranchResource'
+    ProblemDetail:
+      type: object
+      properties:
+        status:
+          type: string
+        Message:
+          type: string
